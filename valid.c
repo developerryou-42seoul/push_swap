@@ -6,7 +6,7 @@
 /*   By: sryou <sryou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 23:39:45 by sryou             #+#    #+#             */
-/*   Updated: 2022/07/27 16:37:16 by sryou            ###   ########.fr       */
+/*   Updated: 2022/08/16 11:50:43 by sryou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,27 @@ int	is_valid_stack(t_stack *st)
 	}
 	free(arr);
 	return (flag);
+}
+
+int	is_stack_sorted(t_data *data)
+{
+	int	*arr;
+	int	ret;
+	int	idx;
+
+	if (data->stack_b->size != 0)
+		return (0);
+	arr = stack_to_array(data->stack_a, data->stack_a->size);
+	if (!arr)
+		return (0);
+	idx = 0;
+	ret = 1;
+	while (idx < data->stack_a->size - 1)
+	{
+		if (arr[idx] > arr[idx + 1])
+			ret = 0;
+		idx++;
+	}
+	free(arr);
+	return (ret);
 }

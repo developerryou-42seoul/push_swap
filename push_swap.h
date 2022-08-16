@@ -6,7 +6,7 @@
 /*   By: sryou <sryou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:39:39 by sryou             #+#    #+#             */
-/*   Updated: 2022/07/29 14:00:52 by sryou            ###   ########.fr       */
+/*   Updated: 2022/08/16 11:51:05 by sryou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	free_data(t_data *data);
 
 int		is_valid_int(char *str);
 int		is_valid_stack(t_stack *st);
+int		is_stack_sorted(t_data *data);
 
 int		*stack_to_array(t_stack *st, int size);
 void	stack_operate(t_data *data, char *op);

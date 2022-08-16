@@ -6,7 +6,7 @@
 /*   By: sryou <sryou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 11:08:36 by sryou             #+#    #+#             */
-/*   Updated: 2022/07/29 15:27:41 by sryou            ###   ########.fr       */
+/*   Updated: 2022/08/16 11:54:23 by sryou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ int	main(int argc, char **argv)
 			idx++;
 		}
 		if (is_valid_stack(data->stack_a))
-			sort_stack_a(data, data->stack_a->size, 'T');
+		{
+			if (!is_stack_sorted(data))
+				sort_stack_a(data, data->stack_a->size, 'T');
+		}
 		else
 			throw_error(data);
 		print_optimize(data);
